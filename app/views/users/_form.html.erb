@@ -1,0 +1,53 @@
+<%= form_for @user do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <fieldset>
+    <div class="row">
+      <div class="center-block">
+        <h1 class="text-center">Register</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1 ">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <%= f.text_field :name, placeholder: "name", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-envelope"></i>
+            </span>
+            <%= f.text_field :email, placeholder: "email", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <%= f.password_field :password, placeholder: "password", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "create user", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

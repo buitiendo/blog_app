@@ -1,0 +1,11 @@
+<h1 class="text-center"><%= "comment" %></h1>
+<%= form_for [@entry, @comment], remote: true  do |f|   %>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= f.text_area :content, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <%= f.submit ("comment"), class: "btn btn-primary" %>
+    </div>
+<% end %>

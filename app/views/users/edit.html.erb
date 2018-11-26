@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong> Register your account!</strong>
+      </div>
+      <div class="panel-body">
+        <%= render 'form' %>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-10 col-md-offset-1 ">
+      <div class="gravatar_edit">
+        <%= gravatar_for @user %>
+        <a href="http://gravatar.com/emails" target="_blank">Change</a>
+      </div>
+    </div>
+  </div>
+</div>

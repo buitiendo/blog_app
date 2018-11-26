@@ -1,0 +1,12 @@
+<% provide :title, ("edit_comment") %>
+<h1 class="text-center"><%= "edit comment" %></h1>
+<%= form_for [@entry, @comment], remote: true do |f|   %>
+  <div class="col-sm-10">
+    <div class="form-group">
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <%= f.submit "comment", class: "btn btn-primary" %>
+  </div>
+<% end %>

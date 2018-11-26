@@ -1,0 +1,13 @@
+<div class="panel-body create">
+  <div class="col-sm-4">
+    <b><%= comment.user.email %></b>
+  </div>
+  <div class="col-sm-5 content-<%= comment.id %>">
+    <%= comment.content %>
+  </div>
+  <div class="col-sm-3 text-right">
+    <%= link_to "delete", [comment.entry, comment], method: :delete,
+      data: {confirm: "are you sure"} %>
+    | <%= link_to "edit", edit_entry_comment_path(comment.entry, comment), remote: true %>
+  </div>
+</div>

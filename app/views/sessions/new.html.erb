@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong> Sign in to continue</strong>
+      </div>
+      <div class="panel-body">
+        <%= form_for :session, url: login_path do |f| %>
+          <fieldset>
+            <div class="row">
+              <div class="center-block">
+                <h1 class="text-center">Login</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-10 col-md-offset-1 ">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-envelope"></i>
+                    </span>
+                    <%= f.email_field :email, placeholder: "email", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-lock"></i>
+                    </span>
+                    <%= f.password_field :password, placeholder: "password", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <%= f.submit "login", class: "btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        <% end %>
+      </div>
+      <div class="panel-footer ">
+        Don't have an account! <%= link_to  "sign up now!", signup_path %></p>
+      </div>
+    </div>
+  </div>
+</div>
