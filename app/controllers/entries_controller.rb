@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @entry.comments.page(params[:page]).per 3
+    @comments = @entry.comments.show_comment_desc.page(params[:page]).per 5
   end
 
   def new

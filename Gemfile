@@ -2,7 +2,6 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.4.0"
 gem "rails", "~> 5.2.1"
-gem "sqlite3"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -12,6 +11,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "3.3.7"
 gem "sass-rails", "~> 5.0"
 gem "jquery-rails"
+gem "rails-ujs", "~> 5.1.0.beta1"
 gem "bcrypt", "3.1.12"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
@@ -37,4 +37,11 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem "ffaker", :git => "https://github.com/EmmanuelOga/ffaker.git"
+end
+
+group :development do
+  gem "sqlite3"
+end
+group :production do
+  gem "pg"
 end

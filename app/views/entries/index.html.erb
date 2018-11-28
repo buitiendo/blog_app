@@ -1,8 +1,4 @@
-
-
-
-
-
+<% provide :title, "List Entry" %>
 <p id="notice"><%= notice %></p>
 <h1>Entries</h1>
 <table class="table table-bordered">
@@ -21,12 +17,16 @@
         <td><%= entry.body %></td>
         <td><%= entry.date %></td>
         <td>
-          <%= link_to "Show", entry %> |
-          <%= link_to "Edit", edit_entry_path(entry) %> |
-          <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Show", entry %>
+          <% if current_user == entry.user %>
+            | <%= link_to "Edit", edit_entry_path(entry) %>
+            | <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
         </td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <%= link_to "New Entry", new_entry_path, class: "btn btn-success" %>
+  <% if current_user.present?  %>
+    <%= link_to "New Entry", new_entry_path, class: "btn btn-success" %>
+  <% end %>

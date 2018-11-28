@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = @entry.comments.create comment_params
     @comment.user_id = current_user.id
     @comment.save
-    @comments = Comment.where(entry_id: @entry)
+    @comments = Comment.where(entry_id: @entry).show_comment_desc.page(params[:page]).per 5
     if @comment.save
       respond_to {|format| format.js}
     end

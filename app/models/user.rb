@@ -7,6 +7,14 @@ has_many :passive_relationships, class_name: "Relationship",
   dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  NUMBER_REGEX = /\d[0-9]\)*\z/
+  validates :name, presence: true, length: {maximum: 60}
+  validates :email, presence: true, length: {maximum: 60},
+    format: {with: VALID_EMAIL_REGEX},
+    uniqueness: {case_sensitive: false}
+  validates :password, presence: true,
+    length: {minimum: 6}, allow_nil: true
   before_save {email.downcase!}
   has_many :comments
   has_many :entries
